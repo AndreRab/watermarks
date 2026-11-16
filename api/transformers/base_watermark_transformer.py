@@ -15,7 +15,7 @@ class DetectionResult(Generic[PayloadT]):
     metrics: dict[str, float] = field(default_factory=dict)
 
 
-class WaterMarkTransformer(ABC, Generic[MediaT, PayloadT, GenerationRequestT]):
+class BaseWaterMarkTransformer(ABC, Generic[MediaT, PayloadT, GenerationRequestT]):
     can_embed: ClassVar[bool] = False
     can_generate: ClassVar[bool] = False
     can_recover: ClassVar[bool] = False
