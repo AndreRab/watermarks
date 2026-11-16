@@ -23,11 +23,11 @@ class BaseWaterMarkTransformer(ABC, Generic[MediaT, PayloadT, GenerationRequestT
     def embed(self, media: MediaT, payload: PayloadT) -> MediaT:
         pass
 
-    def generate(self, request: GenerationRequestT) -> MediaT:
+    def generate(self, request: GenerationRequestT):
         pass
 
     @abstractmethod
-    def detect(self, media: MediaT) -> DetectionResult[PayloadT]:
+    def detect(self, media: MediaT):
         pass
 
     def recover_original(self, media: MediaT) -> MediaT:

@@ -1,3 +1,3 @@
-from .base_watermark_transformer import DetectionResult, WaterMarkTransformer
+from .base_watermark_transformer import BaseWaterMarkTransformer, DetectionResult
 
-__all__ = ["DetectionResult", "WaterMarkTransformer"]
+__all__ = ["BaseWaterMarkTransformer", "DetectionResult"]
