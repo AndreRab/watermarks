@@ -60,6 +60,12 @@ class TreeRingWatermarkTransformer(BaseWaterMarkTransformer):
             self._latent_shape, watermark_seed, watermark_radius, watermark_channel
         )
 
+    @property
+    def watermark(self):
+        """Return the key pattern in the selected Fourier channel."""
+        channel = self._watermark_channel
+        return self._key[0, channel] * self._mask[0, channel]
+
     def generate(
         self, request: str = "", with_watermark: bool = True
     ) -> tuple[Image.Image, torch.Tensor]:
@@ -92,6 +98,7 @@ class TreeRingWatermarkTransformer(BaseWaterMarkTransformer):
         pipe = StableDiffusionPipeline.from_pretrained(
             model_dir, torch_dtype=self._model_dtype, variant=self._model_variant,
             use_safetensors=True, low_cpu_mem_usage=True, local_files_only=True,
+            safety_checker=None, feature_extractor=None, requires_safety_checker=False,
         )
         pipe.scheduler = DDIMScheduler.from_config(pipe.scheduler.config)
 
