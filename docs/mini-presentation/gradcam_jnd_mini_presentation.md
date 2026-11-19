@@ -4,6 +4,8 @@
 
 **Artykuł:** Jiasheng Qu i współautorzy, *A Novel Improved Reversible Visible Image Watermarking Algorithm Based on Grad-CAM and JND*, 2021.
 
+**Czasopismo:** Security and Communication Networks.
+
 **Cel:** umieścić widoczne logo na głównym obiekcie zdjęcia i umożliwić późniejsze odzyskanie dokładnych wartości oryginalnych pikseli.
 
 1. Grad-CAM: obliczenie gradientów i mapy istotności.
